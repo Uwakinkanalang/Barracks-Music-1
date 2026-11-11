@@ -9,6 +9,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const MAX_COMMANDS = 100;
 const COMMAND_COUNT_WARN_THRESHOLD = 90;
+const DISABLED_CATEGORIES = new Set(['Community', 'Economy', 'Fun', 'Leveling', 'Logging', 'Ticket']);
 
 function getSubcommandInfo(commandData) {
     const subcommands = [];
@@ -54,7 +55,10 @@ async function getAllFiles(directory, fileList = []) {
 export async function loadCommands(client) {
     client.commands = new Collection();
     const commandsPath = path.join(__dirname, '../../commands');
-    const commandFiles = await getAllFiles(commandsPath);
+    const commandFiles = (await getAllFiles(commandsPath)).filter(filePath => {
+        const category = path.basename(path.dirname(filePath));
+        return !DISABLED_CATEGORIES.has(category);
+    });
     
     logger.info(`Found ${commandFiles.length} command files to load`);
     
