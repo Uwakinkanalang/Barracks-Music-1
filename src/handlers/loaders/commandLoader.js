@@ -260,6 +260,17 @@ async function registerGlobalCommands(client, clientId, commands, totalSubcomman
     logger.info(`Registering ${commandsToRegister.length} global commands...`);
     await client.rest.put(`/applications/${clientId}/commands`, { body: commandsToRegister });
     logger.info(`Successfully registered ${commandsToRegister.length} global commands`);
+
+    // This bot uses global slash commands only. Remove stale guild-scoped copies
+    // so Discord does not display duplicate versions with older descriptions.
+    for (const guild of client.guilds.cache.values()) {
+        try {
+            await client.rest.put(`/applications/${clientId}/guilds/${guild.id}/commands`, { body: [] });
+            logger.info(`Cleared stale guild-scoped slash commands for ${guild.id}`);
+        } catch (error) {
+            logger.warn(`Could not clear guild-scoped slash commands for ${guild.id}: ${error.message}`);
+        }
+    }
     logger.info('Global commands may take up to an hour to appear in all servers on first deploy');
 }
 
