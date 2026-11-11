@@ -11,8 +11,6 @@ export const CATEGORY_ICONS = {
   Reaction_roles: '🎭',
   Search: '🔍',
   ServerStats: '📈',
-  Tools: '🛠️',
-  Utility: '🔧',
 };
 
 /** Commands that always stay available so admins can recover access. */
