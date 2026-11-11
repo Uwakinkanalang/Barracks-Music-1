@@ -10,11 +10,6 @@ export const CATEGORY_ICONS = {
   Music: '🎵',
   Reaction_roles: '🎭',
   Search: '🔍',
-  ServerStats: '📈',
-  Tools: '🛠️',
-  Utility: '🔧',
-  Verification: '✅',
-  Welcome: '👋',
 };
 
 /** Commands that always stay available so admins can recover access. */
