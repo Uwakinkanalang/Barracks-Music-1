@@ -52,7 +52,7 @@ export const botConfig = {
 
     // Command prefix for text-based commands (e.g., "!" for "!ping").
     // Supports both slash commands and prefix commands.
-    prefix: "b!",
+    prefix: process.env.PREFIX || "!",
   },
 
   // =========================
@@ -555,7 +555,7 @@ function normalizeCategoryKey(category) {
 }
 
 export function getCommandPrefix() {
-  return "b!";
+  return botConfig.commands?.prefix ?? "!";
 }
 
 export function getBotOwners() {
