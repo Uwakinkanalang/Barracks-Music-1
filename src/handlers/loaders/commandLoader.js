@@ -134,6 +134,9 @@ function collectCommandPayloads(client) {
         const commandName = command.data.name;
         logger.debug(`Processing command for registration: ${commandName}`);
 
+        // Music commands are prefix-only and are not registered as Discord slash commands.
+        if (String(command.category || "").toLowerCase() === "music") continue;
+
         if (registeredNames.has(commandName)) {
             logger.debug(`Skipping duplicate command: ${commandName}`);
             continue;

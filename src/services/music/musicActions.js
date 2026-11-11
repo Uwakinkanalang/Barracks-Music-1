@@ -190,7 +190,7 @@ export async function joinVoiceChannel(client, interaction) {
 
     return successEmbed(
         'Joined Voice Channel',
-        `Connected to **${channel.name}**. Use /play to start music, or /music for playback controls.`,
+        `Connected to **${channel.name}**. Use b!play to start music, or b!music for playback controls.`,
     );
 }
 
@@ -307,7 +307,7 @@ export async function stopPlayback(client, interaction) {
         }, 15000);
         return successEmbed(
             'Confirm Stop',
-            `There are **${queueLength}** tracks in the queue. Run **/music stop** again within 15 seconds to confirm.`,
+            `There are **${queueLength}** tracks in the queue. Run **b!music stop** again within 15 seconds to confirm.`,
         );
     }
 
