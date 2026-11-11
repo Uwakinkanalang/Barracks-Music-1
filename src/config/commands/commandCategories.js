@@ -13,8 +13,6 @@ export const CATEGORY_ICONS = {
   ServerStats: '📈',
   Tools: '🛠️',
   Utility: '🔧',
-  Verification: '✅',
-  Welcome: '👋',
 };
 
 /** Commands that always stay available so admins can recover access. */
