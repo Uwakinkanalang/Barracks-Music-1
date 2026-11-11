@@ -5,11 +5,9 @@
 export const CATEGORY_ICONS = {
   Birthday: '🎂',
   Core: 'ℹ️',
-  JoinToCreate: '🔌',
   Music: '🎵',
   Reaction_roles: '🎭',
   Search: '🔍',
-  ServerStats: '📈',
 };
 
 /** Commands that always stay available so admins can recover access. */
