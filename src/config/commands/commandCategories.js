@@ -4,12 +4,18 @@
 
 export const CATEGORY_ICONS = {
   Birthday: '🎂',
+  Community: '👥',
   Core: 'ℹ️',
+  Economy: '💰',
+  Fun: '🎮',
+  Leveling: '📊',
+  Logging: '📝',
   Moderation: '🛡️',
   Music: '🎵',
   Reaction_roles: '🎭',
   Search: '🔍',
   ServerStats: '📈',
+  Ticket: '🎫',
   Tools: '🛠️',
   Utility: '🔧',
   Verification: '✅',
