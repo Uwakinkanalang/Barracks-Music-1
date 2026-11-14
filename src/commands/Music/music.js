@@ -19,6 +19,7 @@ import {
 import { deferMusicCommand } from '../../services/music/prefixSupport.js';
 
 export default {
+    prefixOnly: true,
     category: 'Music',
     data: new SlashCommandBuilder()
         .setName('music')
