@@ -47,12 +47,17 @@ export default {
 async function handlePrefixCommand(message, client) {
   try {
     const guildConfig = await getGuildConfig(client, message.guild.id);
-    const prefix = guildConfig?.prefix || getCommandPrefix();
-    const parsed = parsePrefixCommand(message.content, prefix);
+    const configuredPrefix = guildConfig?.prefix || getCommandPrefix();
+    // Always accept the requested b! music prefix, even when the server's
+    // general command prefix is configured differently.
+    const parsed = parsePrefixCommand(message.content, configuredPrefix)
+      || (configuredPrefix === 'b!' ? null : parsePrefixCommand(message.content, 'b!'));
     
     if (!parsed) {
       return; 
     }
+
+    const prefix = message.content.startsWith('b!') ? 'b!' : configuredPrefix;
 
     let { commandName, args } = parsed;
     const musicPrefixShortcut = commandName.toLowerCase();
