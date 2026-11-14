@@ -131,6 +131,11 @@ function collectCommandPayloads(client) {
             continue;
         }
 
+        if (command.prefixOnly === true) {
+            logger.debug(`Skipping prefix-only command registration: ${command.data.name}`);
+            continue;
+        }
+
         const commandName = command.data.name;
         logger.debug(`Processing command for registration: ${commandName}`);
 
