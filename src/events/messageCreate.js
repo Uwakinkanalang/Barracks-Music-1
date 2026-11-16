@@ -65,6 +65,9 @@ async function handlePrefixCommand(message, client) {
     if (MUSIC_PREFIX_SHORTCUTS.has(musicPrefixShortcut)) {
       commandName = 'music';
       args = [musicPrefixShortcut, ...args];
+      if (musicPrefixShortcut === 'loop' && args[1]?.toLowerCase() === 'off') {
+        args[1] = 'none';
+      }
     }
 
     logger.info(`Prefix command detected: ${commandName}, args: ${args.join(', ')}`);
