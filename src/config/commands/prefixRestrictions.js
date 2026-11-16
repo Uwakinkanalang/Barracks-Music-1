@@ -26,7 +26,6 @@ export const GLOBAL_BLOCKED_SUBCOMMAND_GROUPS = new Set([
 export const COMMAND_BLOCKED_SUBCOMMANDS = {
   music: new Set([
     'seek',
-    'clear',
     '247',
   ]),
   birthday: new Set(['setchannel']),
