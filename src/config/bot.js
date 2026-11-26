@@ -24,7 +24,7 @@ export const botConfig = {
     activities: [
       {
         name: "Custom Status", // required by Discord API, not shown in the client
-        state: "Made with ♥",     // this is what people actually see
+        state: "Playing music | Barracks Music",     // this is what people actually see
         type: 4,               // Custom
       },
     ],
@@ -141,7 +141,7 @@ export const botConfig = {
     },
     footer: {
       // Default footer text used in bot embeds.
-      text: "Titan Bot",
+      text: "Barracks Music",
       // Footer icon URL (null = no icon).
       icon: null,
     },
