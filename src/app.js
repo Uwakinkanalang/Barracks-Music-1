@@ -14,6 +14,8 @@ class BarracksMusic extends Client {
       intents: [
         GatewayIntentBits.Guilds,
         GatewayIntentBits.GuildVoiceStates,
+        GatewayIntentBits.GuildMessages,
+        GatewayIntentBits.MessageContent,
       ],
     });
     this.config = config;
@@ -63,7 +65,7 @@ class BarracksMusic extends Client {
   }
 
   async loadEvents() {
-    const files = ['ready.js', 'interactionCreate.js', 'voiceStateUpdate.js'];
+    const files = ['ready.js', 'interactionCreate.js', 'voiceStateUpdate.js', 'messageCreate.js'];
     for (const file of files) {
       const { default: event } = await import(`./events/${file}`);
       const handler = (...args) => Promise.resolve(event.execute(...args, this))
