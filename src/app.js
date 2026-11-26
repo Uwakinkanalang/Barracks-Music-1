@@ -30,6 +30,7 @@ class BarracksMusic extends Client {
       startupLog('Starting Barracks Music...');
       await loadCommands(this);
       await this.loadMusicInteractions();
+      await this.loadEvents();
       initializeMusic(this);
       this.startWebServer();
       await this.login(this.config.bot.token);
