@@ -1,7 +1,7 @@
 {
-  "name": "titanbot",
+  "name": "barracks-music",
   "version": "2.1.0",
-  "description": "Modular Ultimate Community Bot by Touchpoint Support",
+  "description": "Barracks Music Discord bot powered by Discord.js and Lavalink",
   "main": "src/app.js",
   "type": "module",
   "scripts": {
