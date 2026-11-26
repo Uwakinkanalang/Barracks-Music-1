@@ -75,7 +75,6 @@ class BarracksMusic extends Client {
 }
 
 const bot = new BarracksMusic();
-await bot.loadEvents();
 process.once('SIGINT', () => bot.shutdown('SIGINT'));
 process.once('SIGTERM', () => bot.shutdown('SIGTERM'));
 bot.shutdown = async (reason = 'UNKNOWN') => {
