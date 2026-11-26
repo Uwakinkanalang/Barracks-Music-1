@@ -67,6 +67,7 @@ export async function loadCommands(client) {
             const commandName = path.basename(filePath, '.js');
             const commandDir = path.dirname(filePath);
             const category = path.basename(commandDir);
+            if (category !== 'Music') continue;
             
             const commandModule = await import(`file://${filePath}`);
             const command = commandModule.default || commandModule;
